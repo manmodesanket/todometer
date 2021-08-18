@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Navbar } from "../components";
+import { AddItemForm, Navbar, TodoView } from "../components";
 
 export default function Home() {
   return (
@@ -9,7 +9,10 @@ export default function Home() {
         <link rel="icon" href="/todometer.png" />
       </Head>
       <Navbar />
-      <main className="w-full px-80"></main>
+      <main className="w-full sm:px-80">
+        <AddItemForm />
+        <TodoView />
+      </main>
     </>
   );
 }
