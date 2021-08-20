@@ -20,21 +20,21 @@ function DoLaterTodoCard({ todoItem }) {
       <div className="font-bold">{todoItem.task}</div>
       <div className="w-4/12 sm:w-2/12 flex justify-between">
         <figure
-          className="flex items-center"
+          className="flex items-center cursor-pointer"
           onClick={() => handleAction("REMOVE")}
         >
           <Image src="/x.svg" alt="x" width="24" height="24" />
         </figure>
 
         <figure
-          className="flex items-center"
+          className="flex items-center cursor-pointer"
           onClick={() => handleAction("PENDING")}
         >
           <Image src="/resume.svg" alt="resume" width="24" height="24" />
         </figure>
 
         <figure
-          className="flex items-center"
+          className="flex items-center cursor-pointer"
           onClick={() => handleAction("COMPLETED")}
         >
           <Image src="/check.svg" alt="check" width="24" height="24" />

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { AddItemForm, Navbar, TodoView } from "../components";
+import { AddItemForm, DateView, Navbar, TodoView } from "../components";
 
 export default function Home() {
   return (
@@ -10,6 +10,7 @@ export default function Home() {
       </Head>
       <Navbar />
       <main className="w-full sm:px-80">
+        <DateView />
         <AddItemForm />
         <TodoView />
       </main>

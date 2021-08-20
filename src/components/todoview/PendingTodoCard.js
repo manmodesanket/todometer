@@ -20,7 +20,7 @@ function PendingTodoCard({ todoItem }) {
       <div className="font-bold">{todoItem.task}</div>
       <div className="w-4/12 sm:w-2/12 flex justify-between">
         <figure
-          className="flex items-center"
+          className="flex items-center cursor-pointer"
           onClick={() => handleAction("REMOVE")}
         >
           <Image
@@ -28,20 +28,20 @@ function PendingTodoCard({ todoItem }) {
             alt="x"
             width="24"
             height="24"
-            className="flex items-center"
+            className="flex items-center cursor-pointer"
           />
         </figure>
 
         <figure
           onClick={() => handleAction("DO_LATER")}
-          className="flex items-center"
+          className="flex items-center cursor-pointer"
         >
           <Image src="/pause.svg" alt="pause" width="24" height="24" />
         </figure>
 
         <figure
           onClick={() => handleAction("COMPLETED")}
-          className="flex items-center"
+          className="flex items-center cursor-pointer"
         >
           <Image src="/check.svg" alt="check" width="24" height="24" />
         </figure>

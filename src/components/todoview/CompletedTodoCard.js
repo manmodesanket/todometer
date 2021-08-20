@@ -8,7 +8,7 @@ function CompleteTodoCard({ todoItem }) {
       <div className="font-bold">{todoItem.task}</div>
       <div className="w-4/12 sm:w-2/12 flex flex-row-reverse justify-between">
         <figure
-          className="flex items-center"
+          className="flex items-center cursor-pointer"
           onClick={() =>
             todoDispatch({ type: "REMOVE_ITEM", payload: todoItem.id })
           }
