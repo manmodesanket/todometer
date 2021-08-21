@@ -13,7 +13,7 @@ export default function DateView() {
   };
 
   return (
-    <section className="w-11/12 sm:w-10/12 mx-auto mt-10 flex justify-between">
+    <section className="mx-auto mt-10 flex justify-between">
       <div className="flex items-center justify-between">
         <div className="text-4xl sm:text-6xl">{currentDate.day}</div>
         <div className="flex flex-col justify-items-end justify-center items-center pl-1">

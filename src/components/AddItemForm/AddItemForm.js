@@ -27,7 +27,7 @@ export default function AddItemForm() {
           value={content}
           className="form__input form__element"
           onChange={(e) => saveContent(e.target.value)}
-          className="border-2 p-2 sm:p-4 w-11/12 sm:w-10/12 rounded border-black"
+          className="w-full border-2 p-2 sm:p-4 rounded border-black"
           placeholder="Add new item"
           onKeyPress={handleSubmit}
         />

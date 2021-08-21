@@ -6,7 +6,7 @@ import PendingTodoCard from "./PendingTodoCard";
 function TodoView() {
   const { pending, paused, completed } = useAppContext();
   return (
-    <section className="w-11/12 sm:w-10/12 mx-auto">
+    <section>
       {pending.map((todoItem) => (
         <PendingTodoCard key={todoItem.id} todoItem={todoItem} />
       ))}

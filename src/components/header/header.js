@@ -1,6 +1,6 @@
 export default function Navbar() {
   return (
-    <header className="w-full px-4 sm:px-80">
+    <header className="w-11/12 sm:w-8/12 mx-auto px-4 sm:px-80">
       <nav className="flex border-b-2 pb-2">
         <div className="flex justify-items-center items-center ">
           <figure className="w-7 h-7">

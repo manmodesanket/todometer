@@ -30,7 +30,16 @@ export default function AppContextProvider({ children }) {
   }, [todoList]);
 
   return (
-    <AppContext.Provider value={{ pending, paused, completed, todoDispatch }}>
+    <AppContext.Provider
+      value={{
+        pending,
+        paused,
+        completed,
+        completedPercentage: completed.length / todoList.length,
+        pausedPercentage: paused.length / todoList.length,
+        todoDispatch,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );
