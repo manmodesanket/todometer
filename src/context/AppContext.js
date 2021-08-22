@@ -15,17 +15,22 @@ export function useAppContext() {
 }
 
 export default function AppContextProvider({ children }) {
-  const [todoList, todoDispatch] = useReducer(todoReducer, []);
+  const [storedTodo, setStoredTodo] = useLocalStorage("todo", []);
+  const [todoList, todoDispatch] = useReducer(todoReducer, storedTodo);
   const [pending, setPending] = useState([]);
   const [paused, setPaused] = useState([]);
   const [completed, setCompleted] = useState([]);
-  //console.log(localStorage);
+
   const [storedDarkMode, setStoredDarkMode] = useLocalStorage("dark", "light");
   const [darkMode, setDarkMode] = useState(storedDarkMode);
 
   useEffect(() => {
     setDarkMode(storedDarkMode);
   }, [storedDarkMode]);
+
+  useEffect(() => {
+    setStoredTodo(todoList);
+  }, [todoList]);
 
   const toggleTheme = () => {
     setStoredDarkMode((currTheme) =>
