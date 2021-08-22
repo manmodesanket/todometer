@@ -1,17 +1,16 @@
 import Head from "next/head";
+import { useEffect, useState } from "react";
 import { AddItemForm, DateView, Meter, Navbar, TodoView } from "../components";
 import { useAppContext } from "../context/AppContext";
 
 export default function Home() {
   const { darkMode } = useAppContext();
+  let [dark, setDark] = useState("light");
+  useEffect(() => {
+    setDark(darkMode);
+  }, [darkMode]);
   return (
-    <div
-      className={
-        darkMode
-          ? `${"dark transition-all duration-1000"}`
-          : "transition-all duration-1000"
-      }
-    >
+    <div className={dark === "dark" ? `${"dark"}` : ""}>
       <div className="w-full min-h-screen dark:bg-dark dark:text-white">
         <Head>
           <title>todometer</title>

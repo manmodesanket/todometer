@@ -5,6 +5,7 @@ import {
   useReducer,
   useState,
 } from "react";
+import useLocalStorage from "../hooks/useLocalStorage";
 import { todoReducer } from "../reducer/TodoReducer";
 
 const AppContext = createContext();
@@ -18,7 +19,19 @@ export default function AppContextProvider({ children }) {
   const [pending, setPending] = useState([]);
   const [paused, setPaused] = useState([]);
   const [completed, setCompleted] = useState([]);
-  const [darkMode, setDarkMode] = useState(false);
+  //console.log(localStorage);
+  const [storedDarkMode, setStoredDarkMode] = useLocalStorage("dark", "light");
+  const [darkMode, setDarkMode] = useState(storedDarkMode);
+
+  useEffect(() => {
+    setDarkMode(storedDarkMode);
+  }, [storedDarkMode]);
+
+  const toggleTheme = () => {
+    setStoredDarkMode((currTheme) =>
+      currTheme === "light" ? "dark" : "light"
+    );
+  };
 
   useEffect(() => {
     const pending = todoList.filter((item) => item.status === "pending");
@@ -33,7 +46,7 @@ export default function AppContextProvider({ children }) {
   return (
     <AppContext.Provider
       value={{
-        setDarkMode,
+        toggleTheme,
         darkMode,
         pending,
         paused,
