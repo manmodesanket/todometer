@@ -18,6 +18,7 @@ export default function AppContextProvider({ children }) {
   const [pending, setPending] = useState([]);
   const [paused, setPaused] = useState([]);
   const [completed, setCompleted] = useState([]);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     const pending = todoList.filter((item) => item.status === "pending");
@@ -32,6 +33,8 @@ export default function AppContextProvider({ children }) {
   return (
     <AppContext.Provider
       value={{
+        setDarkMode,
+        darkMode,
         pending,
         paused,
         completed,

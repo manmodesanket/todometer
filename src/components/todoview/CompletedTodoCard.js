@@ -4,7 +4,7 @@ import { useAppContext } from "../../context/AppContext";
 function CompleteTodoCard({ todoItem }) {
   const { todoDispatch } = useAppContext();
   return (
-    <article className="w-full mx-auto px-4 py-2 mt-5 border-2 border-black rounded flex justify-between items-center">
+    <article className="w-full mx-auto px-4 py-2 mt-5 border-2 border-black rounded flex justify-between items-center dark:bg-itemColor">
       <div className="font-bold">{todoItem.task}</div>
       <div className="w-4/12 sm:w-2/12 flex flex-row-reverse justify-between">
         <figure
